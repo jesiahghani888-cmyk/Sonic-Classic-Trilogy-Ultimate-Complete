@@ -1,6 +1,6 @@
 # Sonic Classic Trilogy - Ultimate Complete
 
-**Created by Esrael Neto © 2026**
+**Created by Player10thGames © 2026**
 
 Welcome to the official repository and documentation for **Sonic Classic Trilogy - Ultimate Complete**. This project is a brand new Sega Genesis/Mega Drive ROM hack that combines the legendary classic titles—*Sonic the Hedgehog*, *Sonic the Hedgehog 2*, and *Sonic the Hedgehog 3 & Knuckles*—into a single, massive 5.5MB combined ROM file (`Sonic Classic Trilogy - Ultimate Complete.bin`). 
 
@@ -53,7 +53,21 @@ If you wish to build the combined ROM manually from your own legal backups, foll
     *   Update the ROM End address at `0x1A4` to `00 57 FF FF`.
 4.  **Fix the Checksum:** Use a Genesis checksum utility to recalculate the header checksum at offset `0x18E`.
 
-A Python script is included in the development workflow of this repository to automate the concatenation and header injection process.
+### Automated Combination Script
+A Python script `combine_roms.py` is included in this repository to automate the concatenation, header injection, and checksum calculation process.
+
+#### Usage
+1.  Place your clean base ROMs in the same directory as the script.
+2.  Ensure they are named:
+    *   `Sonic The Hedgehog (USA, Europe).bin`
+    *   `Sonic The Hedgehog 2 (World).bin`
+    *   `Sonic The Hedgehog 3 & Knuckles (World).bin`
+3.  Run the script:
+    ```bash
+    python3 combine_roms.py
+    ```
+4.  The output `Sonic Classic Trilogy - Ultimate Complete.bin` will be generated.
+
 
 ---
 
